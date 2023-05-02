@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import React, { ReactElement, ReactNode, useState } from "react";
+import React, { PropsWithChildren, ReactElement, useState } from "react";
 
 type Props = {
   trigger: ReactElement;
-  children: ReactNode;
 };
 
-export function RegoModal({ trigger, children }: Props) {
+export const RegoModal = ({ trigger, children }: PropsWithChildren<Props>) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -28,7 +27,7 @@ export function RegoModal({ trigger, children }: Props) {
       )}
     </>
   );
-}
+};
 
 const S = {
   RegoModalOverlay: styled.div`

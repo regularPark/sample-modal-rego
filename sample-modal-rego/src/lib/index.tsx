@@ -1,1 +1,1 @@
-export { RegoModal } from "../lib/RegoModal";
+export { RegoModal } from "../lib/RegoModal/index";

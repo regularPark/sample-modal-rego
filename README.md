@@ -1,11 +1,11 @@
-# MyModal 라이브러리
+# RegoModal 라이브러리
 
 간단한 모달을 구현할 수 있는 라이브러리입니다.
 
 ## 설치 방법
 
 ```
-npm install woowacourse-sample-modal-rego
+npm install woowacourse-rego-modal
 ```
 
 **해당 라이브러리는 `styled-components`, `@types/styled-components`를 이용합니다.**
@@ -13,40 +13,37 @@ npm install woowacourse-sample-modal-rego
 ## 사용 방법
 
 ```
-import { RegoModal } from 'woowacourse-sample-modal
+import { RegoModal } from 'woowacourse-rego-modal'
 ```
 
-## MyModal 사용하기
+## RegoModal 사용하기
+
+Modal을 사용하기 위해서 필요한 세팅이 있습니다. `useState`를 사용하여 모달을 여닫는 것을 추천합니다.
+
+### Modal 여닫기 위한 state 기본 세팅
 
 ```typescript
-<RegoModal trigger={<button>Open</button>}>
-  <h1>title</h1>
-  <p>content</p>
-</RegoModal>
+const [isModalOpen, setIsModalOpen] = useState(true);
 ```
 
-## Props
+### Modal 여닫는 함수 작성
 
 ```typescript
-type Props = {
-  trigger: React.ReactElement;
-  children?: React.ReactNode;
+const closeModal = () => {
+  setIsModalOpen(false);
+};
+
+const openModal = () => {
+  setIsModalOpen(true);
 };
 ```
 
 ## 사용 예시
 
 ```typescript
-import { RegoModal } from "woowacourse-sample-modal-rego";
+import { RegoModal } from "woowacourse-rego-modal";
 
-function App() {
-  return (
-    <div>
-      <RegoModal trigger={<button>열기</button>}>
-        <h1>title</h1>
-        <p>content</p>
-      </RegoModal>
-    </div>
-  );
-}
+<RegoModal isModalOpen={isModalOpen} closeModal={closeModal}>
+  {<h1>Title</h1>}
+</RegoModal>;
 ```

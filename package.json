@@ -1,6 +1,6 @@
 {
   "name": "woowacourse-rego-modal",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": false,
   "description": "React modal for npm publish in woowacourse",
   "keywords": [

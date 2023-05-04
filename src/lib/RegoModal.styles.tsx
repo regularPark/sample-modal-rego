@@ -22,8 +22,7 @@ const backdropAppear = keyframes`
 
 export const Styled = {
   Modal: styled.dialog`
-    display: grid;
-    grid-template-columns: 80px 80px 80px 80px;
+    display: flex;
     justify-content: center;
     position: fixed;
     bottom: 0;
@@ -58,7 +57,7 @@ export const Styled = {
     width: 20px;
     height: 20px;
     border: none;
-    margin: 10px;
+    margin-right: 10px;
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;

@@ -18,7 +18,7 @@ import { RegoModal } from 'woowacourse-rego-modal'
 
 ## RegoModal 사용하기
 
-Modal을 사용하기 위해서 필요한 세팅이 있습니다. `useState`를 사용하여 모달을 여닫는 것을 추천합니다.
+Modal을 사용하기 위해서 필요한 세팅이 있습니다. 모달을 열고 닫는 함수를 만들어 주어야 합니다.`useState`를 사용하여 모달을 여닫는 것을 추천합니다.
 
 ### Modal 여닫기 위한 state 기본 세팅
 
@@ -43,7 +43,21 @@ const openModal = () => {
 ```typescript
 import { RegoModal } from "woowacourse-rego-modal";
 
-<RegoModal isModalOpen={isModalOpen} closeModal={closeModal}>
-  {<h1>Title</h1>}
-</RegoModal>;
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  return (
+    <RegoModal isModalOpen={isModalOpen} closeModal={closeModal}>
+      {<h1>Title</h1>}
+    </RegoModal>
+  );
+}
 ```
